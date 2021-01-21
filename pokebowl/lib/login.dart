@@ -54,14 +54,20 @@ Widget _buildnameField() {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             TextFormField(
+                               decoration: const InputDecoration(
+              hintText: 'Enter your email',
+            ),
                               validator: (value) {
                                 if (value.isEmpty) {
-                                  return 'Please enter your Name';
-                                }
-                                return null;
-                              },
+                return 'Please enter your email';
+              }
+              return 'hi';
+            },
                             ),
                              TextFormField(
+                                decoration: const InputDecoration(
+              hintText: 'Enter your password',
+            ),
                               validator: (value) {
                                 if (value.isEmpty) {
                                   return 'Please enter your Password';
@@ -132,7 +138,7 @@ Widget _buildnameField() {
             Container(
               alignment: Alignment.topCenter,
               padding: new EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height / 2 - (56 * 3.1),
+                  top: MediaQuery.of(context).size.height / 2 - (156 * 3.1),
                   right: 50.0,
                   left: 50.0),
               child: new Container(
