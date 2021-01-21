@@ -1,19 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pokebowl/pokebowl_icons.dart';
 
-import 'orders.dart';
+import 'order_confirmation.dart';
 
-class Login extends StatelessWidget {
-
-String _name;
-
-final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-Widget _buildnameField() {
-  return null;
-}
-
-
+class Orders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,46 +38,56 @@ Widget _buildnameField() {
                   height: MediaQuery.of(context).size.height / 2 - 56,
                   width: MediaQuery.of(context).size.width,
                 ),
-                Container(
-                  child: Form(
-                                            child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            TextFormField(
-                              validator: (value) {
-                                if (value.isEmpty) {
-                                  return 'Please enter your Name';
-                                }
-                                return null;
-                              },
-                            ),
-                             TextFormField(
-                              validator: (value) {
-                                if (value.isEmpty) {
-                                  return 'Please enter your Password';
-                                }
-                                return null;
-                              },
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 16.0),
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  // Validate returns true if the form is valid, or false
-                                  // otherwise.
-                                  if (_formKey.currentState.validate()) {
-                                    // If the form is valid, display a Snackbar.
-                                    Scaffold.of(context)
-                                        .showSnackBar(SnackBar(content: Text('Processing Data')));
-                                  }
-                                },
-                                child: Text('Submit'),
-                              ),
-                            ),
-                          ],
-                        ),
-                  )
-                                        ),
+
+Container(
+ child: Column(children: [
+   Row(children: <Widget>[
+    Expanded(
+      child: Text('Your Order', textAlign: TextAlign.center),
+    ),
+  ],),
+
+
+   Row(children: <Widget>[
+    Expanded(
+      child: Text('Order 1#', textAlign: TextAlign.center),
+    ),
+    Expanded(
+      child: Text('Icon', textAlign: TextAlign.center),
+    ),
+  ],),
+
+
+  Row(children: <Widget>[
+    Expanded(
+      child: Text('Order 1#', textAlign: TextAlign.center),
+    ),
+    Expanded(
+      child: Text('Icon', textAlign: TextAlign.center),
+    ),
+  ],),
+
+
+  Row(children: <Widget>[
+    Expanded(
+      child: Text('Order 1#', textAlign: TextAlign.center),
+    ),
+    Expanded(
+      child: Text('Icon', textAlign: TextAlign.center),
+    ),
+  ],)
+
+
+ ],)
+),
+
+
+
+
+
+
+
+
                 Container(
                   height: MediaQuery.of(context).size.height / 2 - 56,
                   width: MediaQuery.of(context).size.width / 1.6,
@@ -101,7 +101,7 @@ Widget _buildnameField() {
                           child: Row(
                             children: <Widget>[
                               Expanded(
-                                  child: Text('Login',
+                                  child: Text('Proceed Payment',
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold,
@@ -121,7 +121,7 @@ Widget _buildnameField() {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Orders()));
+                                  builder: (context) => OrderConfirmation()));
                         },
                       ),
                     ],
@@ -129,17 +129,7 @@ Widget _buildnameField() {
                 )
               ],
             ),
-            Container(
-              alignment: Alignment.topCenter,
-              padding: new EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height / 2 - (56 * 3.1),
-                  right: 50.0,
-                  left: 50.0),
-              child: new Container(
-                child: Image(image: AssetImage('assets/images/logo-big.png')),
-              ),
-            ),
-             
+            
           ],
         ));
   }
