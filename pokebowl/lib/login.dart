@@ -56,7 +56,15 @@ Widget _buildnameField() {
                             TextFormField(
                               validator: (value) {
                                 if (value.isEmpty) {
-                                  return 'Please enter some text';
+                                  return 'Please enter your Name';
+                                }
+                                return null;
+                              },
+                            ),
+                             TextFormField(
+                              validator: (value) {
+                                if (value.isEmpty) {
+                                  return 'Please enter your Password';
                                 }
                                 return null;
                               },
