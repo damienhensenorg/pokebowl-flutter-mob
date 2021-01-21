@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pokebowl/pokebowl_icons.dart';
 
+import 'login.dart';
+
 class OrderConfirmation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -79,7 +81,7 @@ class OrderConfirmation extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => OrderConfirmation()));
+                              builder: (context) => Login()));
                     },
                   ),
                 ],
